@@ -17,6 +17,7 @@ html, body {
     margin: 0 auto;
     max-width: 800px;
     height: 100%;
+    width: 100%;
 }
 
 .message {
@@ -35,7 +36,7 @@ html, body {
     height: 10px;
     top: 400px;
     position: absolute;
-    right: -120px;
+    right: -140px;
     
 }
 
@@ -43,12 +44,13 @@ html, body {
     background: black;
     width: 10px;
     height: 400px;
+    position: absolute;
 }
 
 .topStand {
     background: black;
     height: 10px;
-    width: 240px;
+    width: 260px;
     position: absolute;
     top:0;
     
@@ -82,7 +84,7 @@ html, body {
     height: 50px;
     position: absolute;
     top: 0;
-    right: -120px;
+    right: -140px;
 }
 
 .head {
@@ -92,7 +94,7 @@ html, body {
     height: 50px;
     position: absolute;
     top: 50px;
-    right: -150px;
+    right: -170px;
 }
 
 .body {
@@ -100,7 +102,7 @@ html, body {
     width: 10px;
     height: 120px;
     top: 120px;
-    right: -120px;
+    right: -140px;
     position: absolute;
 }
 
@@ -110,7 +112,7 @@ html, body {
     height: 10px;
     position: absolute;
     top: 140px;
-    right: -120px;
+    right: -140px;
     rotate: -40deg;
     transform-origin: right bottom;
 }
@@ -121,7 +123,7 @@ html, body {
     height: 10px;
     position: absolute;
     top: 140px;
-    right: -190px;
+    right: -210px;
     rotate: 40deg;
     transform-origin: left bottom;
 }
@@ -132,7 +134,7 @@ html, body {
     height: 10px;
     position: absolute;
     top: 230px;
-    right: -120px;
+    right: -140px;
     rotate: -60deg;
     transform-origin: right bottom;
 }
@@ -143,7 +145,7 @@ html, body {
     height: 10px;
     position: absolute;
     top: 230px;
-    right: -210px;
+    right: -230px;
     rotate: 60deg;
     transform-origin: left bottom;
 }
@@ -197,13 +199,13 @@ html, body {
 .scoreboard {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     background-color: white;
     height: 50px;
     width: 200px;
-    margin-left: auto;
-    margin-right: 20px;
-    top:-800px;
+    margin-right: 1%; 
+    top: 2%;
+    right: 1px;
     border: none;
     border-radius: 20px;
     text-align: center;
@@ -217,6 +219,27 @@ html, body {
     margin-bottom: 2px;
 }
 
+.restart-button {
+    position: absolute;
+    top: 2%;
+    margin-left: 1%;
+    
+}
+
+.button {
+    font-size: 2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color:rgb(42, 139, 141);
+    background-color: #c9e7ff;
+}
+
+.button:hover:not(:disabled),
+.button:focus:not(:disabled) {
+    background-color: hsl(200, 100%, 80%);
+}
+
 
 @media only screen and (max-width: 700px) and (orientation: portrait) {
 
@@ -226,22 +249,21 @@ html, body {
     }
 
     .drawing {
-        height: 300px;
+        height: 200px;
     }
     
     .bottomStand {
-        background: black;
         width: 200px;
         height: 5px;
-        top: 250px;
-        right: -45px;
+        top: 150px;
+        right: -40px;
         
     }
     
     .verticalStand {
         background: black;
         width: 5px;
-        height: 250px;
+        height: 150px;
         margin-left: 40px;
         
     }
@@ -258,7 +280,7 @@ html, body {
         background: black;
         width: 45px;
         height: 5px;
-        top: 220px;
+        top: 120px;
         margin-right: 35px;
         rotate: 40deg;
         transform-origin: left bottom;
@@ -268,7 +290,7 @@ html, body {
         background: black;
         width: 45px;
         height: 5px;
-        top: 220px;
+        top: 120px;
         margin-right: -35px;
         rotate: -40deg;
         transform-origin: right bottom;
@@ -285,25 +307,25 @@ html, body {
     .head {
         border-radius: 100%;
         border: 5px solid;
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         top: 20px;
-        right: -57.5px;
+        right: -55.5px;
     }
     
     .body {
         background: black;
         width: 5px;
         height: 40px;
-        top: 50px;
+        top: 45px;
         right: -45px;
     }
     
     .leftArm {
         background: black;
-        width: 30px;
+        width: 25px;
         height: 5px;
-        top: 60px;
+        top: 50px;
         right: -45px;
         rotate: -40deg;
         transform-origin: right bottom;
@@ -311,19 +333,19 @@ html, body {
     
     .rightArm {
         background: black;
-        width: 30px;
+        width: 25px;
         height: 5px;
-        top: 60px;
-        right: -70px;
+        top: 50px;
+        right: -65px;
         rotate: 40deg;
         transform-origin: left bottom;
     }
     
     .leftLeg {
         background: black;
-        width: 40px;
+        width: 35px;
         height: 5px;
-        top: 85px;
+        top: 80px;
         right: -45px;
         rotate: -60deg;
         transform-origin: right bottom;
@@ -331,16 +353,15 @@ html, body {
     
     .rightLeg {
         background: black;
-        width: 40px;
+        width: 35px;
         height: 5px;
-        top: 85px;
-        right: -80px;
+        top: 80px;
+        right: -75px;
         rotate: 60deg;
         transform-origin: left bottom;
     }
 
     .word {
-        margin-top: 10px;
         display: flex;
         gap: 0.2em;
         font-size: 2.5rem;
@@ -394,6 +415,21 @@ html, body {
         margin-bottom: 2px;
     }
 
+    .restart-button {
+        position: relative;
+        margin-left: 10%;
+        top: -93%;
+        
+    }
+    
+    .button {
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        color:rgb(42, 139, 141);
+        background-color: white;
+    }
     
 }
 
@@ -575,5 +611,20 @@ html, body {
         margin-bottom: 2px;
     }
 
+    .restart-button {
+        top: 5%;
+        right: 1px;
+        margin-right: 2%;
+        
+    }
+    
+    .button {
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        color:rgb(42, 139, 141);
+        background-color: #c9e7ff;
+    }
     
 }

@@ -77,6 +77,11 @@ function App() {
 
   const activeLetters = guesses.filter(letter => word.includes(letter))
 
+  const handleRestart = () => {
+    setWord(getNewWord)
+    setGuesses([])
+  }
+
   return (
     <div className="app-container">
       <div className="app">
@@ -88,6 +93,9 @@ function App() {
       <div className="scoreboard">
         <Scoreboard wins={score.wins} losses={score.losses}/>
       </div>
+      <div className="restart-button">
+          {(lost || won) && <button className="button" onClick={handleRestart}>Restart</button>}
+        </div>
     </div>
   )
 }

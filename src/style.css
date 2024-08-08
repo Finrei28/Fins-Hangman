@@ -1,0 +1,579 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.app-container {
+    height: 100vh;
+    width: 100vw;
+    background-color:#487397;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    height: 100%;
+}
+
+.message {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.drawing {
+    height: 400px;
+    width: 120px;
+}
+
+.bottomStand {
+    background: black;
+    width: 400px;
+    height: 10px;
+    top: 400px;
+    position: absolute;
+    right: -120px;
+    
+}
+
+.verticalStand {
+    background: black;
+    width: 10px;
+    height: 400px;
+}
+
+.topStand {
+    background: black;
+    height: 10px;
+    width: 240px;
+    position: absolute;
+    top:0;
+    
+}
+
+.rightLedge {
+    background: black;
+    width: 120px;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 320px;
+    rotate: 40deg;
+    transform-origin: left bottom;
+}
+
+.leftLedge {
+    background: black;
+    width: 120px;
+    height: 10px;
+    position: absolute;
+    right: 110px;
+    top: 320px;
+    rotate: -40deg;
+    transform-origin: right bottom;
+}
+
+.hanger {
+    background: black;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: -120px;
+}
+
+.head {
+    border-radius: 100%;
+    border: 10px solid;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: -150px;
+}
+
+.body {
+    background: black;
+    width: 10px;
+    height: 120px;
+    top: 120px;
+    right: -120px;
+    position: absolute;
+}
+
+.leftArm {
+    background: black;
+    width: 80px;
+    height: 10px;
+    position: absolute;
+    top: 140px;
+    right: -120px;
+    rotate: -40deg;
+    transform-origin: right bottom;
+}
+
+.rightArm {
+    background: black;
+    width: 80px;
+    height: 10px;
+    position: absolute;
+    top: 140px;
+    right: -190px;
+    rotate: 40deg;
+    transform-origin: left bottom;
+}
+
+.leftLeg {
+    background: black;
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    top: 230px;
+    right: -120px;
+    rotate: -60deg;
+    transform-origin: right bottom;
+}
+
+.rightLeg {
+    background: black;
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    top: 230px;
+    right: -210px;
+    rotate: 60deg;
+    transform-origin: left bottom;
+}
+
+.word {
+    display: flex;
+    gap: 0.25em;
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: monospace;
+}
+
+.letter {
+    border-bottom: 0.1em solid black;
+}
+
+
+.keyboard {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.5rem;
+}
+
+.keyboard-keys {
+    border: 3px solid black;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: .5rem;
+    color: black;
+    background-color: white;
+}
+
+.keyboard-keys.active {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+}
+
+.keyboard-keys.inactive {
+    opacity: 0.3;
+}
+
+.keyboard-keys:hover:not(:disabled),
+.keyboard-keys:focus:not(:disabled) {
+    background-color: hsl(200, 100%, 80%);
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    height: 50px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: 20px;
+    top:-800px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    color:rgb(42, 139, 141);
+    background-color: #c9e7ff;
+}
+
+.scoreboard-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+
+@media only screen and (max-width: 700px) and (orientation: portrait) {
+
+    .message {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .drawing {
+        height: 300px;
+    }
+    
+    .bottomStand {
+        background: black;
+        width: 200px;
+        height: 5px;
+        top: 250px;
+        right: -45px;
+        
+    }
+    
+    .verticalStand {
+        background: black;
+        width: 5px;
+        height: 250px;
+        margin-left: 40px;
+        
+    }
+    
+    .topStand {
+        background: black;
+        height: 5px;
+        width: 120px;
+        margin-left: 45px;
+        
+    }
+    
+    .rightLedge {
+        background: black;
+        width: 45px;
+        height: 5px;
+        top: 220px;
+        margin-right: 35px;
+        rotate: 40deg;
+        transform-origin: left bottom;
+    }
+    
+    .leftLedge {
+        background: black;
+        width: 45px;
+        height: 5px;
+        top: 220px;
+        margin-right: -35px;
+        rotate: -40deg;
+        transform-origin: right bottom;
+    }
+    
+    .hanger {
+        background: black;
+        width: 5px;
+        height: 20px;
+        top: 0;
+        right: -45px;
+    }
+    
+    .head {
+        border-radius: 100%;
+        border: 5px solid;
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        right: -57.5px;
+    }
+    
+    .body {
+        background: black;
+        width: 5px;
+        height: 40px;
+        top: 50px;
+        right: -45px;
+    }
+    
+    .leftArm {
+        background: black;
+        width: 30px;
+        height: 5px;
+        top: 60px;
+        right: -45px;
+        rotate: -40deg;
+        transform-origin: right bottom;
+    }
+    
+    .rightArm {
+        background: black;
+        width: 30px;
+        height: 5px;
+        top: 60px;
+        right: -70px;
+        rotate: 40deg;
+        transform-origin: left bottom;
+    }
+    
+    .leftLeg {
+        background: black;
+        width: 40px;
+        height: 5px;
+        top: 85px;
+        right: -45px;
+        rotate: -60deg;
+        transform-origin: right bottom;
+    }
+    
+    .rightLeg {
+        background: black;
+        width: 40px;
+        height: 5px;
+        top: 85px;
+        right: -80px;
+        rotate: 60deg;
+        transform-origin: left bottom;
+    }
+
+    .word {
+        margin-top: 10px;
+        display: flex;
+        gap: 0.2em;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-family: monospace;
+    }
+    
+    .letter {
+        border-bottom: 0.1em solid black;
+    }
+    
+    
+    .keyboard {
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 0.3rem;
+    }
+    
+    .keyboard-keys {
+        border: 3px solid black;
+        background: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: .5rem;
+        color: black;
+        background-color: white;
+    }
+
+    .scoreboard {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: white;
+        height: 40px;
+        width: 150px;
+        margin-left: 2%;
+        top: -95%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        color:rgb(42, 139, 141);
+        background-color: #c9e7ff;
+    }
+    
+    .scoreboard-header {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+
+    .message {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .drawing {
+        margin-top: -20px   ;
+        height: 120px;
+    }
+    
+    .bottomStand {
+        background: black;
+        width: 150px;
+        height: 5px;
+        top: 150px;
+        right: -15px;
+        
+    }
+    
+    .verticalStand {
+        background: black;
+        width: 5px;
+        height: 150px;
+        margin-left: 40px;
+        
+    }
+    
+    .topStand {
+        background: black;
+        height: 5px;
+        width: 100px;
+        margin-left: 40px;
+        
+    }
+    
+    .rightLedge {
+        background: black;
+        width: 45px;
+        height: 5px;
+        top: 120px;
+        margin-right: 35px;
+        rotate: 40deg;
+        transform-origin: left bottom;
+    }
+    
+    .leftLedge {
+        background: black;
+        width: 45px;
+        height: 5px;
+        top: 120px;
+        margin-right: -35px;
+        rotate: -40deg;
+        transform-origin: right bottom;
+    }
+    
+    .hanger {
+        background: black;
+        width: 5px;
+        height: 20px;
+        top: 0;
+        right: -20px;
+    }
+    
+    .head {
+        border-radius: 100%;
+        border: 5px solid;
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        right: -32.5px;
+    }
+    
+    .body {
+        background: black;
+        width: 5px;
+        height: 40px;
+        top: 50px;
+        right: -20px;
+    }
+    
+    .leftArm {
+        background: black;
+        width: 30px;
+        height: 5px;
+        top: 60px;
+        right: -20px;
+        rotate: -40deg;
+        transform-origin: right bottom;
+    }
+    
+    .rightArm {
+        background: black;
+        width: 30px;
+        height: 5px;
+        top: 60px;
+        right: -45px;
+        rotate: 40deg;
+        transform-origin: left bottom;
+    }
+    
+    .leftLeg {
+        background: black;
+        width: 40px;
+        height: 5px;
+        top: 85px;
+        right: -20px;
+        rotate: -60deg;
+        transform-origin: right bottom;
+    }
+    
+    .rightLeg {
+        background: black;
+        width: 40px;
+        height: 5px;
+        top: 85px;
+        right: -55px;
+        rotate: 60deg;
+        transform-origin: left bottom;
+    }
+
+    .word {
+        margin-top: 10px;
+        display: flex;
+        gap: 0.1em;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-family: monospace;
+    }
+    
+    .letter {
+        border-bottom: 0.08em solid black;
+    }
+    
+    
+    .keyboard {
+        margin-top: -20px;
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 0.3rem;
+    }
+    
+    .keyboard-keys {
+        border: 3px solid black;
+        background: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: .5rem;
+        color: black;
+        background-color: white;
+    }
+
+    .scoreboard {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: white;
+        height: 40px;
+        width: 150px;
+        margin-left: 2%;
+        top: -95%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        color:rgb(42, 139, 141);
+        background-color: #c9e7ff;
+    }
+    
+    .scoreboard-header {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+
+    
+}
